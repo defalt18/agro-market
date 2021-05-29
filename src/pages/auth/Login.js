@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Login = () => {
 	const [user, setUser] = React.useState({
@@ -23,21 +24,22 @@ export const Login = () => {
 				<p className='display-4 registration__title'>
 					Login
 					<p className='registration__desc'>
-						New to the community? <p className="font-weight-bold">Register Here</p>
+						New to the community?{' '}
+						<a href='/registration' className='font-weight-bold'>Register Here</a>
 					</p>
 				</p>
 				<div className='col-10 col-md-8 col-lg-6'>
 					<form onSubmit={handleSubmit}>
 						<div className='form-row form-group '>
-							<label htmlFor='inputEmail4'>Email</label>
+							<label htmlFor='inputEmail4'>Phone Number</label>
 							<input
-								type='email'
+								type='number'
 								className='form-control'
 								id='inputEmail4'
-								name='email'
+								name='phone'
 								value={user.email}
 								onChange={handleChange}
-								placeholder='Email'
+								placeholder='Contact Number'
 							/>
 						</div>
 
@@ -53,9 +55,11 @@ export const Login = () => {
 								placeholder='Password'
 							/>
 						</div>
-						<button type='submit' className='btn btn-primary'>
-							Login
-						</button>
+						<Link to='/dashboard'>
+							<button type='submit' className='btn btn-primary'>
+								Login
+							</button>
+						</Link>
 					</form>
 				</div>
 			</div>

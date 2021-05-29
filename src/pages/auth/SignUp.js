@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const SignUp = () => {
 	const [user, setUser] = React.useState({
@@ -27,8 +28,8 @@ export const SignUp = () => {
 					Registration
 					<p className='registration__desc'>
 						Register as a farmer , mandi or an open buyer and get access to all
-						the commodity information available to us. <br/>Negotiate deals and fix
-						appointments as per your comforts.
+						the commodity information available to us. <br />
+						Negotiate deals and fix appointments as per your comforts.
 					</p>
 				</p>
 				<div className='col-10 col-md-8 col-lg-6'>
@@ -47,15 +48,15 @@ export const SignUp = () => {
 						</div>
 
 						<div className='form-row form-group '>
-							<label htmlFor='inputEmail4'>Email</label>
+							<label htmlFor='inputEmail4'>Phone Number</label>
 							<input
-								type='email'
+								type='number'
 								className='form-control'
 								id='inputEmail4'
-								name='email'
+								name='phone'
 								value={user.email}
 								onChange={handleChange}
-								placeholder='Email'
+								placeholder='Contact Number'
 							/>
 						</div>
 						<div className='form-row form-group '>
@@ -99,9 +100,47 @@ export const SignUp = () => {
 								placeholder='Password'
 							/>
 						</div>
-						<button type='submit' className='btn btn-primary'>
-							Register
-						</button>
+						<div className='form-row form-group '>
+							<label htmlFor='inputPassword4'>State</label>
+							<input
+								type='text'
+								className='form-control'
+								id='state'
+								name='state'
+								value={user.password}
+								onChange={handleChange}
+								placeholder='State'
+							/>
+						</div>
+						<div className='form-row form-group '>
+							<label htmlFor='inputPassword4'>City</label>
+							<input
+								type='text'
+								className='form-control'
+								id='city'
+								name='city'
+								value={user.password}
+								onChange={handleChange}
+								placeholder='City'
+							/>
+						</div>
+						<div className='form-row form-group '>
+							<label htmlFor='inputPassword4'>Pincode</label>
+							<input
+								type='number'
+								className='form-control'
+								id='pincode'
+								name='pincode'
+								value={user.password}
+								onChange={handleChange}
+								placeholder='Pincode'
+							/>
+						</div>
+						<Link to={'/dashboard'}>
+							<button type='submit' className='btn btn-primary'>
+								Register
+							</button>
+						</Link>
 					</form>
 				</div>
 			</div>

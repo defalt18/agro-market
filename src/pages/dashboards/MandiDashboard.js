@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { Seller } from './seller'
-import { ProduceItem } from './produceItem'
+import avatar from '../../images/avatar_yello.png'
+import FarmerCard from './FarmerCard'
+import ConfirmOrders from './ConfirmOrders'
+import Listings from './Listings'
 
-export const Dashboard = (props) => {
+export default function MandiDashboard(props) {
 	const [page, setPage] = useState(0)
 
 	return (
 		<div className='dashboard'>
-			<div className='jumbotron bg-light'>
-				<h1 className='display-4'>
-					Welcome {'<'} User_Role {'>'}
-				</h1>
+			<div className='jumbotron bg-light'>️
+				<h1 className='display-4'>Welcome {props.role} admin</h1>
 				<p className='lead'>
 					Let us first head to your profile to set up your basic account details
 					involving produce you want to buy or sell.
@@ -20,21 +20,27 @@ export const Dashboard = (props) => {
 					This will help us learn more about your needs and suggest good vendors
 					& places for you
 				</p>
-				<a className='btn btn-primary btn-lg' href='#' role='button'>
+				<p
+					onClick={() => {
+						setPage(1)
+					}}
+					className='btn btn-primary btn-lg'
+					role='button'
+				>
 					Go to Profile
-				</a>
+				</p>
 			</div>
 
 			<div className='dashboard__content'>
 				<div className='sidebar'>
 					<div className='d-flex flex-column align-items-center bg-light py-3 details'>
 						<img
-							src='https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg'
+							src={avatar}
 							alt='Avatar'
 							className='md-avatar rounded avatar'
 						/>
 						<h6>Name</h6>
-						<p className='badge badge-success'>Role</p>
+						<p className='badge badge-success'>{props.role} admin</p>
 						<h6>Contact</h6>
 					</div>
 					<h5
@@ -45,7 +51,7 @@ export const Dashboard = (props) => {
 							page === 0 ? 'selected' : null
 						} py-2`}
 					>
-						Feed
+						Requests
 					</h5>
 					<h5
 						onClick={() => {
@@ -65,58 +71,48 @@ export const Dashboard = (props) => {
 							page === 2 ? 'selected' : null
 						} py-2`}
 					>
-						Produce
+						Orders
+					</h5>
+					<h5
+						onClick={() => {
+							setPage(3)
+						}}
+						className={`sidebar__element ${
+							page === 3 ? 'selected' : null
+						} py-2`}
+					>
+						Listings
 					</h5>
 					<h5 className='sidebar__element py-2'>
 						<a href='/'>Logout</a>
 					</h5>
-					{/*<div className='list-group'>*/}
-					{/*	<button*/}
-					{/*		type='button'*/}
-					{/*		className='list-group-item list-group-item-action active'*/}
-					{/*	>*/}
-					{/*		Feed*/}
-					{/*	</button>*/}
-					{/*	<button*/}
-					{/*		type='button'*/}
-					{/*		className='list-group-item list-group-item-action'*/}
-					{/*	>*/}
-					{/*		Profile*/}
-					{/*	</button>*/}
-					{/*	<button*/}
-					{/*		type='button'*/}
-					{/*		className='list-group-item list-group-item-action'*/}
-					{/*	>*/}
-					{/*		Produce*/}
-					{/*	</button>*/}
-					{/*	<button*/}
-					{/*		type='button'*/}
-					{/*		className='list-group-item list-group-item-action'*/}
-					{/*		disabled*/}
-					{/*	>*/}
-					{/*		Logout*/}
-					{/*	</button>*/}
-					{/*</div>*/}
 				</div>
 				{page === 0 ? (
 					<div className='feed'>
-						<Seller />
-						<Seller />
-						<Seller />
-						<Seller />
-						<Seller />
+						<FarmerCard />
+						<FarmerCard />
+						<FarmerCard />
+						<FarmerCard />
 					</div>
 				) : null}
 				{page === 1 ? (
 					<div className='profile'>
 						<img
-							src='https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg'
+							src={avatar}
 							alt='Avatar'
 							className='md-avatar rounded avatar'
 						/>
 						<h2>
-							<span className='badge badge-primary'>Role</span>
+							<span className='badge badge-primary'>{props.role} admin</span>
 						</h2>
+						<h4 className='d-flex'>
+							Rating :{' '}
+							{Array(2)
+								.fill()
+								.map((_, i) => (
+									<div className={'ml-2'}>⭐️</div>
+								))}
+						</h4>
 						<div className='accordion w-100' id='accordionExample'>
 							<div className='card'>
 								<div className='card-header' id='headingOne'>
@@ -129,7 +125,7 @@ export const Dashboard = (props) => {
 											aria-expanded='true'
 											aria-controls='collapseOne'
 										>
-											Personal Details
+											Mandi Details
 										</button>
 									</h5>
 								</div>
@@ -144,16 +140,12 @@ export const Dashboard = (props) => {
 										<div className='d-flex'>
 											<div className='w-50'>
 												<div className='flex__div'>
-													<h6 className='text-primary'>First Name : </h6>
-													<h5>Candice</h5>
+													<h6 className='text-primary'>Mandi Name : </h6>
+													<h5>Mahrashtra Bazaar</h5>
 												</div>
 												<div className='flex__div'>
-													<h6 className='text-primary'>Last Name : </h6>
-													<h5>King</h5>
-												</div>
-												<div className='flex__div'>
-													<h6 className='text-primary'>Gender : </h6>
-													<h5>Female</h5>
+													<h6 className='text-primary'>Coordinator Name : </h6>
+													<h5>Bablu Yadav</h5>
 												</div>
 											</div>
 											<div className='w-50'>
@@ -164,6 +156,10 @@ export const Dashboard = (props) => {
 												<div className='flex__div'>
 													<h6 className='text-primary'>City : </h6>
 													<h5>Michigan</h5>
+												</div>
+												<div className='flex__div'>
+													<h6 className='text-primary'>Phone : </h6>
+													<h5>9435354542</h5>
 												</div>
 											</div>
 										</div>
@@ -197,41 +193,9 @@ export const Dashboard = (props) => {
 											<h5>9345 3459 4353</h5>
 										</div>
 										<div className='flex__div'>
-											<h6>Ration Card : </h6>
-											<h5>9345 3459 4353</h5>
-										</div>
-										<div className='flex__div'>
 											<h6>PAN : </h6>
 											<h5>9345 3459 4353</h5>
 										</div>
-									</div>
-								</div>
-							</div>
-							<div className='card'>
-								<div className='card-header' id='headingThree'>
-									<h5 className='mb-0'>
-										<button
-											className='btn btn-link collapsed'
-											type='button'
-											data-toggle='collapse'
-											data-target='#collapseThree'
-											aria-expanded='false'
-											aria-controls='collapseThree'
-										>
-											Produce Type
-										</button>
-									</h5>
-								</div>
-								<div
-									id='collapseThree'
-									className='collapse'
-									aria-labelledby='headingThree'
-									data-parent='#accordionExample'
-								>
-									<div className='card-body'>
-										<h5>Wheat</h5>
-										<h5>Rice</h5>
-										<h5>Bajra</h5>
 									</div>
 								</div>
 							</div>
@@ -239,14 +203,24 @@ export const Dashboard = (props) => {
 					</div>
 				) : null}
 
-				{
-					page===2 ? <div className="produce">
-						<ProduceItem />
-						<ProduceItem />
-						<ProduceItem />
-						<ProduceItem />
-					</div> : null
-				}
+				{page === 2 ? (
+					<div className={'produce'}>
+						<ConfirmOrders />
+						<ConfirmOrders />
+						<ConfirmOrders />
+						<ConfirmOrders />
+					</div>
+				) : null}
+
+				{page === 3 ? (
+					<div className={'produce'}>
+						<Listings />
+						<Listings />
+						<Listings />
+						<Listings />
+						<Listings />
+					</div>
+				) : null}
 			</div>
 		</div>
 	)

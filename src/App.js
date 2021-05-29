@@ -1,7 +1,10 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
+
 
 import {
 	Home,
@@ -14,10 +17,14 @@ import {
 } from './pages'
 
 function App() {
+
+    const dispatch = useDispatch();
+    const auth = useSelector((state) => state.auth);
+
 	return (
 		<div>
 			<Header />
-			<Router>
+
 				<Switch>
 					<Route exact path={'/'} component={Home} />
 					<Route exact path={'/registration'} component={SignUp} />
@@ -27,10 +34,11 @@ function App() {
 					<Route exact path={'/mandis'} component={Mandis} />
 					<Route exact path={'/produce'} component={Produce} />
 				</Switch>
-			</Router>
+
+
 			<Footer />
-		</div>
-	)
+        </div>
+    );
 }
 
-export default App
+export default App;

@@ -3,10 +3,15 @@ import { authConstants } from "../actions/constants";
 const initialState = {
     token: null,
     user: {
-        firstName: "",
-        lastName: "",
+        role: "farmer",
+        fullName: "",
         email: "",
-        picture: "",
+        contactNumber: "",
+        password: "",
+        address: "",
+        city: "",
+        state: "",
+        pincode: "",
     },
     authenticate: false,
     authenticating: false,

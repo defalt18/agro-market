@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/auth");
 const jwt = require("jsonwebtoken"); //for user token
 const bcrypt = require("bcrypt"); //for password hashing
 
@@ -87,7 +87,6 @@ exports.signIn = (req, res) => {
                         fullName,
                         email,
                         contactNumber,
-                        hashPassword,
                         address,
                         city,
                         state,
@@ -102,7 +101,6 @@ exports.signIn = (req, res) => {
                             fullName,
                             email,
                             contactNumber,
-                            hashPassword,
                             address,
                             city,
                             state,
@@ -125,4 +123,60 @@ exports.signIn = (req, res) => {
 exports.signOut = (req, res) => {
     res.clearCookie("token");
     res.status(200).json({ message: "Signout successfully..." });
+};
+
+exports.getUser = (req, res) => {
+    User.findById(req.params.id).exec((err, user) => {
+        if (err)
+            return res
+                .status(400)
+                .json({ message: "something went wrong ", error: err });
+        if (!user)
+            return res.status(400).json({
+                message: "User not found",
+            });
+
+        const {
+            role,
+            fullName,
+            email,
+            contactNumber,
+            profilePicture,
+            address,
+            city,
+            state,
+            pincode,
+            userStatus,
+            ratings,
+            products,
+        } = user;
+
+        const sendUser = {
+            role,
+            fullName,
+            email,
+            contactNumber,
+            profilePicture,
+            address,
+            city,
+            state,
+            pincode,
+            userStatus,
+            ratings,
+            products,
+        };
+
+        return res.status(200).json({
+            message: "User fetched successfully",
+            user: sendUser,
+        });
+    });
+};
+
+exports.updateUser = (req, res) => {
+    res.status(203).json({ message: "This feature will coming soon" });
+};
+
+exports.deleteUser = (req, res) => {
+    res.status(203).json({ message: "This feature will coming soon" });
 };

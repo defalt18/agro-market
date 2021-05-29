@@ -15,4 +15,12 @@ router.get("/product/:id", getProduct);
 router.put("/product/:id", updateProduct);
 router.delete("/product/:id", deleteProduct);
 
+// router.post("product/review/:id", requireSignIn, addProduceReview);
+// router.get("product/review/:id", requireSignIn, getAllProduceReview);
+// router.delete("product/review/:id", requireSignIn, deleteProduceReview);
+
+// router.post("product/rating/:id", requireSignIn, addProduceRating);
+// router.get("product/rating/:id", requireSignIn, getAllProduceRating);
+// router.delete("product/rating/:id", requireSignIn, deleteProduceRating);
+
 module.exports = router;

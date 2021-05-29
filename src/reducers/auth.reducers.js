@@ -1,19 +1,24 @@
 import { authConstants } from '../actions/constants'
 
 const initialState = {
-	token: null,
-	user: {
-		firstName: '',
-		lastName: '',
-		email: '',
-		picture: '',
-	},
-	authenticate: false,
-	authenticating: false,
-	loading: false,
-	error: null,
-	message: '',
-}
+    token: null,
+    user: {
+        role: "farmer",
+        fullName: "",
+        email: "",
+        contactNumber: "",
+        password: "",
+        address: "",
+        city: "",
+        state: "",
+        pincode: "",
+    },
+    authenticate: false,
+    authenticating: false,
+    loading: false,
+    error: null,
+    message: "",
+};
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState, action) => {

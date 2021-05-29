@@ -144,6 +144,7 @@ exports.getUser = (req, res) => {
 			pincode,
 			userStatus,
 			ratings,
+			reviews,
 			products,
 		} = user
 
@@ -159,6 +160,7 @@ exports.getUser = (req, res) => {
 			pincode,
 			userStatus,
 			ratings,
+			reviews,
 			products,
 		}
 
@@ -168,14 +170,6 @@ exports.getUser = (req, res) => {
 		})
 	})
 }
-
-// exports.updateUser = (req, res) => {
-//     res.status(203).json({ message: "This feature will coming soon" });
-// };
-
-// exports.deleteUser = (req, res) => {
-//     res.status(203).json({ message: "This feature will coming soon" });
-// };
 
 exports.updateUser = (req, res) => {
 	User.findById(req.params.id).exec((err, _user) => {

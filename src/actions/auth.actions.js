@@ -8,7 +8,7 @@ export const login = (user) => {
         dispatch({ type: authConstants.LOGIN_REQUEST });
         const res = await axios.post("/admin/signin", { ...user });
 
-        if (res.status === 200) {
+        if (res.status === 201) {
             const { token, user } = res.data;
             localStorage.setItem("token", token);
             localStorage.setItem("user", JSON.stringify(user));

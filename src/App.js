@@ -1,3 +1,4 @@
+import { useSelector, useDispatch } from 'react-redux'
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -14,6 +15,9 @@ import {
 } from './pages'
 
 function App() {
+	const dispatch = useDispatch()
+	const auth = useSelector((state) => state.auth)
+
 	return (
 		<div>
 			<Router>

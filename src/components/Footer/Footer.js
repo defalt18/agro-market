@@ -14,7 +14,10 @@ const Footer = () => {
 					<span>Get connected with us on social networks:</span>
 				</div>
 				<div>
-					<a href='https://github.com/defalt18/agro-market.git' class='me-4 text-reset'>
+					<a
+						href='https://github.com/defalt18/agro-market.git'
+						class='me-4 text-reset'
+					>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='26'
@@ -37,59 +40,41 @@ const Footer = () => {
 								<i class='fas fa-gem me-3'></i>Agro Market
 							</h6>
 							<p>
-								A place where a farmer can connect to his buyer and sell his produce
-								as efficiently as possible relieving him of any hassle or long
-								queues
+								A place where a farmer can connect to his buyer and sell his
+								produce as efficiently as possible relieving him of any hassle
+								or long queues
 							</p>
 						</div>
 
 						<div class='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
 							<h6 class='text-uppercase fw-bold mb-4'>People</h6>
 							<p>
-								<a href='#!' class='text-reset'>
-									Farmers
-								</a>
+								<a class='text-reset'>Farmers</a>
 							</p>
 							<p>
-								<a href='#!' class='text-reset'>
-									Mandis
-								</a>
+								<a class='text-reset'>Mandis</a>
 							</p>
 							<p>
-								<a href='#!' class='text-reset'>
-									Open Buyers
-								</a>
+								<a class='text-reset'>Open Buyers</a>
 							</p>
 							<p>
-								<a href='#!' class='text-reset'>
-									Community
-								</a>
+								<a class='text-reset'>Community</a>
 							</p>
 						</div>
 
-						{/*<div class='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>*/}
-						{/*	<h6 class='text-uppercase fw-bold mb-4'>Useful links</h6>*/}
-						{/*	<p>*/}
-						{/*		<a href='#!' class='text-reset'>*/}
-						{/*			Pricing*/}
-						{/*		</a>*/}
-						{/*	</p>*/}
-						{/*	<p>*/}
-						{/*		<a href='#!' class='text-reset'>*/}
-						{/*			Settings*/}
-						{/*		</a>*/}
-						{/*	</p>*/}
-						{/*	<p>*/}
-						{/*		<a href='#!' class='text-reset'>*/}
-						{/*			Orders*/}
-						{/*		</a>*/}
-						{/*	</p>*/}
-						{/*	<p>*/}
-						{/*		<a href='#!' class='text-reset'>*/}
-						{/*			Help*/}
-						{/*		</a>*/}
-						{/*	</p>*/}
-						{/*</div>*/}
+						<div class='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
+							<h6 class='text-uppercase fw-bold mb-4'>Join In</h6>
+							<p>
+								<a href='#!' class='text-reset'>
+									Login
+								</a>
+							</p>
+							<p>
+								<a href='#!' class='text-reset'>
+									Register
+								</a>
+							</p>
+						</div>
 
 						<div class='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
 							<h6 class='text-uppercase fw-bold mb-4'>Contact</h6>

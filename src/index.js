@@ -10,7 +10,7 @@ window.store = store;
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router>
+        <Router basename="/agro-market">
             <React.StrictMode>
                 <App />
             </React.StrictMode>

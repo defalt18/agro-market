@@ -21,24 +21,18 @@ const Header = () => {
 			<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 				<ul className='navbar-nav mr-auto'>
 					<li className='nav-item active'>
-						<a className='nav-link' href='#'>
+						<a className='nav-link'>
 							Home <span className='sr-only'>(current)</span>
 						</a>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link' href='#'>
-							Mandis
-						</a>
+						<a className='nav-link'>Mandis</a>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link' href='#'>
-							Open Market
-						</a>
+						<a className='nav-link'>Open Market</a>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link' href='#'>
-							Produce
-						</a>
+						<a className='nav-link'>Produce</a>
 					</li>
 				</ul>
 				<div className='form-inline my-2 my-lg-0'>

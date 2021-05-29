@@ -10,7 +10,7 @@ const styles = {
 	padView: { padding: '0 5%' },
 	desc: {
 		fontSize: 25,
-		background: 'lightgray',
+		backgroundColor: '#f8f9fa',
 		padding: 10,
 	},
 	features: {

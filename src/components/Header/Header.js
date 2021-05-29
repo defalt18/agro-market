@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 	return (
 		<nav className='sticky-top navbar navbar-expand-lg navbar-dark bg-dark'>
-			<a className='navbar-brand' href='/'>
+			<Link className='navbar-brand' to='/'>
 				Agro Market
-			</a>
+			</Link>
 			<button
 				className='navbar-toggler'
 				type='button'
@@ -21,37 +22,43 @@ const Header = () => {
 			<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 				<ul className='navbar-nav mr-auto'>
 					<li className='nav-item active'>
-						<a href='/' className='nav-link'>
+						<Link to='/' className='nav-link'>
 							Home <span className='sr-only'>(current)</span>
-						</a>
+						</Link>
 					</li>
 					<li className='nav-item'>
-						<a href='/mandis' className='nav-link'>Mandis</a>
+						<Link to='/mandis' className='nav-link'>
+							Mandis
+						</Link>
 					</li>
 					<li className='nav-item'>
-						<a href='/market' className='nav-link'>Open Market</a>
+						<Link to='/market' className='nav-link'>
+							Open Market
+						</Link>
 					</li>
 					<li className='nav-item'>
-						<a href='/produce' className='nav-link'>Produce</a>
+						<Link to='/produce' className='nav-link'>
+							Produce
+						</Link>
 					</li>
 				</ul>
 				<div className='form-inline my-2 my-lg-0'>
-					<a href='/login'>
+					<Link to='/login'>
 						<button
 							className='btn btn-outline-success my-2 my-sm-0'
 							type='submit'
 						>
 							Login
 						</button>
-					</a>
-					<a href='/registration'>
+					</Link>
+					<Link to='/registration'>
 						<button
 							className='btn btn-outline-success my-2 mx-2 my-sm-0'
 							type='submit'
 						>
 							Signup
 						</button>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</nav>

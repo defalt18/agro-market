@@ -16,8 +16,8 @@ import {
 function App() {
 	return (
 		<div>
-			<Header />
 			<Router>
+				<Header />
 				<Switch>
 					<Route exact path={'/'} component={Home} />
 					<Route exact path={'/registration'} component={SignUp} />
@@ -27,8 +27,8 @@ function App() {
 					<Route exact path={'/mandis'} component={Mandis} />
 					<Route exact path={'/produce'} component={Produce} />
 				</Switch>
+				<Footer />
 			</Router>
-			<Footer />
 		</div>
 	)
 }

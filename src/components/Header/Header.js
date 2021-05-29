@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
 	return (
 		<nav className='sticky-top navbar navbar-expand-lg navbar-dark bg-dark'>
-			<a className='navbar-brand' href='#'>
+			<a className='navbar-brand' href='/'>
 				Agro Market
 			</a>
 			<button
@@ -21,18 +21,18 @@ const Header = () => {
 			<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 				<ul className='navbar-nav mr-auto'>
 					<li className='nav-item active'>
-						<a className='nav-link'>
+						<a href='/' className='nav-link'>
 							Home <span className='sr-only'>(current)</span>
 						</a>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link'>Mandis</a>
+						<a href='/mandis' className='nav-link'>Mandis</a>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link'>Open Market</a>
+						<a href='/market' className='nav-link'>Open Market</a>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link'>Produce</a>
+						<a href='/produce' className='nav-link'>Produce</a>
 					</li>
 				</ul>
 				<div className='form-inline my-2 my-lg-0'>

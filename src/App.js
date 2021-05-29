@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { BrowserRouter as Switch, Route } from 'react-router-dom'
 
-import {Home , Dashboard, Login, SignUp} from './pages'
+import {Home , Dashboard, Login, SignUp, Market,Mandis,Produce} from './pages'
 
 function App() {
 	return (
@@ -14,6 +14,9 @@ function App() {
 				<Route exact path={'/registration'} component={SignUp} />
 				<Route exact path={'/login'} component={Login} />
 				<Route exact path={'/dashboard'} component={Dashboard} />
+				<Route exact path={'/market'} component={Market} />
+				<Route exact path={'/mandis'} component={Mandis} />
+				<Route exact path={'/produce'} component={Produce} />
 			</Switch>
 			<Footer />
 		</div>

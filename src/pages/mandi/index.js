@@ -1,0 +1,1 @@
+export { Mandis } from './mandis'

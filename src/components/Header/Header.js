@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
 	return (
-		<nav className='fixed-top navbar navbar-expand-lg navbar-dark bg-dark'>
+		<nav className='sticky-top navbar navbar-expand-lg navbar-dark bg-dark'>
 			<a className='navbar-brand' href='#'>
 				Agro Market
 			</a>
@@ -36,12 +36,22 @@ const Header = () => {
 					</li>
 				</ul>
 				<div className='form-inline my-2 my-lg-0'>
-					<button
-						className='btn btn-outline-success my-2 my-sm-0'
-						type='submit'
-					>
-						Login / Signup
-					</button>
+					<a href='/login'>
+						<button
+							className='btn btn-outline-success my-2 my-sm-0'
+							type='submit'
+						>
+							Login
+						</button>
+					</a>
+					<a href='/registration'>
+						<button
+							className='btn btn-outline-success my-2 mx-2 my-sm-0'
+							type='submit'
+						>
+							Signup
+						</button>
+					</a>
 				</div>
 			</div>
 		</nav>

@@ -1,40 +1,57 @@
-import { useSelector, useDispatch } from 'react-redux'
-import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { Switch, Route } from "react-router-dom";
+import { isUserLoggedIn } from "./actions";
 
 import {
-	Home,
-	Dashboard,
-	Login,
-	SignUp,
-	Market,
-	Mandis,
-	Produce,
-} from './pages'
+    Home,
+    RenderDashboard,
+    Login,
+    SignUp,
+    RenderMarket,
+    Produce,
+} from "./pages";
+import PrivateRoute from "./helpers/privateRouter";
 
 function App() {
-	const dispatch = useDispatch()
-	const auth = useSelector((state) => state.auth)
+    const dispatch = useDispatch();
+    const auth = useSelector((state) => state.auth);
 
-	return (
-		<div>
-			<Router>
-				<Header />
-				<Switch>
-					<Route exact path={'/'} component={Home} />
-					<Route exact path={'/registration'} component={SignUp} />
-					<Route exact path={'/login'} component={Login} />
-					<Route exact path={'/dashboard'} component={Dashboard} />
-					<Route exact path={'/market'} component={Market} />
-					<Route exact path={'/mandis'} component={Mandis} />
-					<Route exact path={'/produce'} component={Produce} />
-				</Switch>
-				<Footer />
-			</Router>
-		</div>
-	)
+    useEffect(() => {
+        if (!auth.authenticated) {
+            dispatch(isUserLoggedIn());
+        }
+    }, []);
+
+    return (
+        <div>
+            <Header auth={auth} />
+            <Switch>
+                <Route exact path={"/"}>
+                    <Home />
+                </Route>
+                <PrivateRoute exact path={"/dashboard"}>
+                    <RenderDashboard user={auth.user} />
+                </PrivateRoute>
+                <PrivateRoute exact path={"/markets"}>
+                    <RenderMarket />
+                </PrivateRoute>
+                <PrivateRoute exact path={"/produce"}>
+                    <Produce />
+                </PrivateRoute>
+                <Route exact path={"/registration"}>
+                    <SignUp />
+                </Route>
+                <Route exact path={"/login"}>
+                    <Login />
+                </Route>
+            </Switch>
+            <Footer />
+        </div>
+    );
 }
 
-export default App
+export default App;

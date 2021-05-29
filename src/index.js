@@ -9,12 +9,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 window.store = store;
 
 ReactDOM.render(
-	<Provider store={store}>
-		<Router basename="/agro-market">
-			<React.StrictMode>
-				<App />
-			</React.StrictMode>
-		</Router>
-	</Provider>,
-	document.getElementById("root")
+    <Provider store={store}>
+        <Router basename="/agro-market">
+            <App />
+        </Router>
+    </Provider>,
+    document.getElementById("root")
 );

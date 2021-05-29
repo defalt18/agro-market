@@ -22,7 +22,6 @@
         "slugify": "^1.5.3"
     },
     "devDependencies": {
-        "eslint": "^7.27.0",
         "nodemon": "^2.0.7"
     }
 }

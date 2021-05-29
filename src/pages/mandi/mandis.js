@@ -65,11 +65,9 @@ const data = [
 ]
 export function Mandis() {
 	return (
-		<div className='container py-5'>
-			<div className='row text-center text-white mb-5'>
-				<div className='col-lg-7 mx-auto'>
-					<h1 className='display-4'>Mandi</h1>
-				</div>
+		<div className='container pb-5'>
+			<div className={'d-flex justify-content-center my-5'}>
+				<h1 className={'text-align-center'}>Mandis</h1>
 			</div>
 			<div className='row'>
 				<div className='col-lg-8 mx-auto'>

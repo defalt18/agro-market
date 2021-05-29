@@ -15,7 +15,9 @@ const productSchema = require("mongoose").Schema(
         slug: {
             type: String,
             required: true,
-            unique: true,
+        },
+        grade: {
+            type: String,
         },
         quantityKG: {
             type: Number,

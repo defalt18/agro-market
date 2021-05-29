@@ -37,15 +37,31 @@ const data = [
 export function Produce() {
 	return (
 		<div className='container' id='main'>
-			<div className='row'>
-				<div className='col-sm-8' id='detail'>
-					<h1 id='shawn'>
-						<b>List of Product</b>
-					</h1>
-				</div>
-				{data.map((item) => {
-					return <Product key={item.id} {...item} />
-				})}
+			<div className={'d-flex justify-content-center my-5'}>
+				<h1 className={'display-4 text-align-center'}>List of products</h1>
+			</div>
+
+			<div className={'d-flex justify-content-center'}>
+				<table className='table w-60'>
+					<thead>
+						<tr>
+							<th scope='col'>#</th>
+							<th scope='col'>Crop Name</th>
+							<th scope='col'>Grade</th>
+							<th scope='col'>Quantity (in kq)</th>
+						</tr>
+					</thead>
+					<tbody>
+						{data.map((item) => (
+							<tr>
+								<th scope='row'>{item.id}</th>
+								<td>Wheat</td>
+								<td>A</td>
+								<td>500</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
 			</div>
 		</div>
 	)

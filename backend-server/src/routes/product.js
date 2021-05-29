@@ -1,25 +1,18 @@
 const express = require("express");
+const { requireSignIn } = require("../controller/common-middleware/auth");
+const {
+    getAllProducts,
+    createProduct,
+    getProduct,
+    updateProduct,
+    deleteProduct,
+} = require("../controller/product");
 const router = express.Router();
 
-// router.post(
-//     "/createproduct",
-//     validateSignInRequest,
-//     isRequestValidated,
-//     signIn
-// );
-//router.get("/allproducts", getAllUser);
-//router.get("/product/:id", signUp);
-// router.patch(
-//     "/product/:id",
-//     validateSignUpRequest,
-//     isRequestValidated,
-//     signOut
-// );
-// router.delete(
-//     "/product/:id",
-//     validateSignUpRequest,
-//     isRequestValidated,
-//     signOut
-// );
+router.get("/products", getAllProducts);
+router.post("/product/create", requireSignIn, createProduct);
+router.get("/product/:id", getProduct);
+router.put("/product/:id", updateProduct);
+router.delete("/product/:id", deleteProduct);
 
 module.exports = router;

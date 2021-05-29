@@ -32,7 +32,7 @@ const productSchema = require("mongoose").Schema(
             default: 0,
             min: 0,
         },
-        affordableRangeKM: { type: number, default: -1 },
+        affordableRangeKM: { type: Number, default: -1 },
         productPictures: [{ img: { type: String } }],
         productVideos: [{ img: { type: String } }],
         bids: [
